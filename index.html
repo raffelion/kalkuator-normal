@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Normal Kali</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <main class="app">
+    <section class="calculator floating">
+      <div class="calculator-header">
+        <span class="status-dot"></span>
+        <h1>Kalkulator Normal Kali</h1>
+      </div>
+
+      <input type="text" id="display" class="display" disabled placeholder="0" />
+
+      <div class="buttons">
+        <button class="btn danger" data-value="C">C</button>
+        <button class="btn danger" data-value="DEL">DEL</button>
+        <button class="btn operator" data-value="%">%</button>
+        <button class="btn operator" data-value="/">/</button>
+
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn operator" data-value="*">*</button>
+
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn operator" data-value="-">-</button>
+
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn operator" data-value="+">+</button>
+
+        <button class="btn zero" data-value="0">0</button>
+        <button class="btn" data-value=".">.</button>
+        <button class="btn equal pulse" data-value="=">=</button>
+      </div>
+
+      <p class="hint">Awas ya, kalkulator ni sensitif kali hatinya.</p>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="loadingModal">
+    <div class="modal-card loading-card">
+      <div class="spinner"></div>
+      <h2>Lagi Ngitung Dulu Lah...</h2>
+      <p>Tunggu bentar ya bang, sistem kami lagi pura-pura kerja ni.</p>
+    </div>
+  </div>
+
+  <div id="confetti-container"></div>
+
+  <div class="modal hidden" id="errorModal">
+    <div class="modal-card error-card shake-in">
+      <h2>Perhitungan Gagal, Bah</h2>
+      <p>
+        Aduh, error aneh kali terdeteksi. Hubungi customer service aja lah,
+        rupanya matematika pun udah sok ribet kali sekarang.
+      </p>
+      <div class="modal-actions">
+        <button id="contactCsBtn" class="modal-btn">Hubungi CS</button>
+        <button id="closeErrorBtn" class="modal-btn ghost-btn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="chatModal">
+    <div class="modal-card chat-card">
+      <div class="chat-header">
+        <h2>Customer Service</h2>
+        <span class="online-badge">Online</span>
+      </div>
+
+      <div class="chat-box" id="chatBox">
+        <div class="message cs-message">
+          Halo bang, ketik aja apa pun. Kita lanjutkan kekacauan ini sama-sama.
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <input
+          type="text"
+          id="chatInput"
+          placeholder="Ketik pesanmu di sini lah..."
+          autocomplete="off"
+        />
+        <button type="submit">Kirim</button>
+      </form>
+
+      <button id="closeChatBtn" class="modal-btn full-width">Tutup Chat</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
